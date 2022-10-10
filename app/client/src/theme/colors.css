@@ -1,0 +1,41 @@
+:root {
+  /* orange */
+  --bizBrainz-color-orange-900 : #B7491A;
+  --bizBrainz-color-orange-800 : #D15420;
+  --bizBrainz-color-orange-700 : #DF5B23;
+  --bizBrainz-color-orange-600 : #ED6227;
+  --bizBrainz-color-orange-500 : #F86A2B; /* Primary */
+  --bizBrainz-color-orange-400 : #F97D4A;
+  --bizBrainz-color-orange-300 : #F9936B;
+  --bizBrainz-color-orange-200 : #FBB195;
+  --bizBrainz-color-orange-100 : #FCCFBF;
+  --bizBrainz-color-orange-50 : #FAEAE8;
+
+  /* black */
+  --bizBrainz-color-black: #000;
+  --bizBrainz-color-black-900 : #191919;
+  --bizBrainz-color-black-800 : #393939;
+  --bizBrainz-color-black-700 : #575757;
+  --bizBrainz-color-black-600 : #6B6B6B;
+  --bizBrainz-color-black-500 : #939393;
+  --bizBrainz-color-black-400 : #B3B3B3;
+  --bizBrainz-color-black-300 : #D7D7D7;
+  --bizBrainz-color-black-250 : #E0DEDE;
+  --bizBrainz-color-black-200 : #E7E7E7;
+  --bizBrainz-color-black-100 : #F1F1F1;
+  --bizBrainz-color-black-50 : #F8F8F8;
+  --bizBrainz-color-black-0 : #FFFFFF;
+
+  /* green */
+  --bizBrainz-color-green-500 : #03B364;
+  --bizBrainz-color-green-50 : #E5F6EC;
+
+  /* yellow */
+  --bizBrainz-color-yellow-500 : #FEC518;
+  --bizBrainz-color-yellow-50 : #FFF8E2;
+
+  /* red */
+  --bizBrainz-color-red-500 : #F13125;
+  --bizBrainz-color-red-50 : #FFEAEC;
+
+}

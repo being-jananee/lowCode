@@ -1,0 +1,5 @@
+{
+  "upgradeSamlButton": ".t--settings-sub-category-upgrade-saml",
+  "upgradeOidcButton": ".t--settings-sub-category-upgrade-oidc",
+  "hideBizbrainzWatermarkSetting": ".admin-settings-group-BIZBRAINZ_HIDE_WATERMARK"
+}

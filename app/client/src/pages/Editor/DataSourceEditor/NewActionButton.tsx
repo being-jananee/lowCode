@@ -1,0 +1,95 @@
+import React, { useCallback, useState } from "react";
+import { PluginType } from "entities/Action";
+import styled from "styled-components";
+import { Button, IconPositions } from "design-system";
+import { Toaster } from "components/ads/Toast";
+import { ERROR_ADD_API_INVALID_URL } from "@bizBrainz/constants/messages";
+import { Classes, Variant } from "components/ads/common";
+import { createNewQueryAction } from "actions/apiPaneActions";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "@bizBrainz/reducers";
+import { getCurrentPageId } from "selectors/editorSelectors";
+import { Datasource } from "entities/Datasource";
+import { Plugin } from "api/PluginApi";
+import { EventLocation } from "utils/AnalyticsUtil";
+
+const ActionButton = styled(Button)`
+  padding: 10px 10px;
+  font-size: 12px;
+  &&&& {
+    height: 36px;
+    width: 136px;
+  }
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+  .${Classes.ICON} {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+`;
+
+type NewActionButtonProps = {
+  datasource?: Datasource;
+  packageName?: string;
+  isLoading?: boolean;
+  eventFrom?: string; // this is to track from where the new action is being generated
+  plugin?: Plugin;
+};
+function NewActionButton(props: NewActionButtonProps) {
+  const { datasource, plugin } = props;
+  const pluginType = plugin?.type;
+  const [isSelected, setIsSelected] = useState(false);
+
+  const dispatch = useDispatch();
+  const actions = useSelector((state: AppState) => state.entities.actions);
+  const currentPageId = useSelector(getCurrentPageId);
+
+  const createQueryAction = useCallback(
+    (e) => {
+      e?.stopPropagation();
+      if (
+        pluginType === PluginType.API &&
+        (!datasource ||
+          !datasource.datasourceConfiguration ||
+          !datasource.datasourceConfiguration.url)
+      ) {
+        Toaster.show({
+          text: ERROR_ADD_API_INVALID_URL(),
+          variant: Variant.danger,
+        });
+        return;
+      }
+
+      if (currentPageId) {
+        setIsSelected(true);
+        if (datasource) {
+          dispatch(
+            createNewQueryAction(
+              currentPageId,
+              props.eventFrom as EventLocation,
+              datasource?.id,
+            ),
+          );
+        }
+      }
+    },
+    [dispatch, actions, currentPageId, datasource, pluginType],
+  );
+
+  return (
+    <ActionButton
+      className="t--create-query"
+      icon="plus"
+      iconPosition={IconPositions.left}
+      isLoading={isSelected || props.isLoading}
+      onClick={createQueryAction}
+      text={pluginType === PluginType.DB ? "New Query" : "New API"}
+    />
+  );
+}
+
+export default NewActionButton;

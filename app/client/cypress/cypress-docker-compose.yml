@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  bizBrainz-server:
+    image: bizBrainz/bizBrainz-server:latest
+    environment:
+      BIZBRAINZ_MONGODB_URI: "mongodb://mongo:27017/bizBrainz"
+      BIZBRAINZ_REDIS_URL: "redis://redis:6379"
+      BIZBRAINZ_MAIL_ENABLED: "false"
+    ports:
+      - "8080:8080"
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    networks:
+      - bizBrainz
+
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=bizBrainz
+    networks:
+      - bizBrainz
+
+  redis:
+    image: redis
+    networks:
+      - bizBrainz
+
+networks:
+  bizBrainz:
+    driver: bridge

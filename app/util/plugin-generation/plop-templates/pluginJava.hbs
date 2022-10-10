@@ -1,0 +1,56 @@
+package com.external.plugins;
+
+import com.bizBrainz.external.exceptions.pluginExceptions.BizbrainzPluginError;
+import com.bizBrainz.external.exceptions.pluginExceptions.BizbrainzPluginException;
+import com.bizBrainz.external.models.ActionConfiguration;
+import com.bizBrainz.external.models.ActionExecutionResult;
+import com.bizBrainz.external.models.DatasourceConfiguration;
+import com.bizBrainz.external.models.DatasourceStructure;
+import com.bizBrainz.external.models.DatasourceTestResult;
+import com.bizBrainz.external.plugins.BasePlugin;
+import com.bizBrainz.external.plugins.PluginExecutor;
+import org.pf4j.Extension;
+import org.pf4j.PluginWrapper;
+import reactor.core.publisher.Mono;
+
+import java.util.Set;
+
+public class {{pascalCase name}} extends BasePlugin {
+    public {{pascalCase name}}(PluginWrapper wrapper) {
+        super(wrapper);
+    }
+
+    @Extension
+    public static class {{pascalCase name}}Executor implements PluginExecutor<C> {
+
+        @Override
+        public Mono<ActionExecutionResult> execute(C connection, DatasourceConfiguration datasourceConfiguration, ActionConfiguration actionConfiguration) {
+            return Mono.error(new BizbrainzPluginException(BizbrainzPluginError.PLUGIN_ERROR, "Please implement"));
+        }
+
+        @Override
+        public Mono datasourceCreate(DatasourceConfiguration datasourceConfiguration) {
+            return Mono.error(new BizbrainzPluginException(BizbrainzPluginError.PLUGIN_ERROR, "Please implement"));
+        }
+
+        @Override
+        public void datasourceDestroy(C connection) {
+            throw new BizbrainzPluginException(BizbrainzPluginError.PLUGIN_ERROR, "Please implement");
+        }
+
+        @Override
+        public Set<String> validateDatasource(DatasourceConfiguration datasourceConfiguration) {
+            throw new BizbrainzPluginException(BizbrainzPluginError.PLUGIN_ERROR, "Please implement");
+        }
+
+        @Override
+        public Mono<DatasourceTestResult> testDatasource(DatasourceConfiguration datasourceConfiguration) {
+            return Mono.error(new BizbrainzPluginException(BizbrainzPluginError.PLUGIN_ERROR, "Please implement"));
+        }
+
+        @Override
+        public Mono<DatasourceStructure> getStructure(C connection, DatasourceConfiguration datasourceConfiguration) {
+            return Mono.error(new BizbrainzPluginException(BizbrainzPluginError.PLUGIN_ERROR, "Please implement"));
+        }
+    }
+}

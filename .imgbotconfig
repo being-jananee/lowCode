@@ -1,0 +1,5 @@
+{
+    "ignoredFiles": [
+        "app/server/bizBrainz-server/src/test/resources/*"
+    ]
+}

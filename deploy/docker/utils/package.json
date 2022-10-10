@@ -1,0 +1,27 @@
+{
+  "name": "bizBrainz_utils",
+  "version": "1.0.0",
+  "description": "bizBrainz utils tool",
+  "main": "bin/index.js",
+  "author": "",
+  "license": "Apache-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizBrainzorg/bizBrainz.git",
+    "directory": "deploy/docker"
+  },
+  "dependencies": {
+    "dotenv": "10.0.0",
+    "mongodb": "^4.4.0",
+    "readline-sync": "1.4.10",
+    "shelljs": "0.8.5",
+    "nodemailer": "6.7.5",
+    "cli-progress": "^3.11.2",
+    "luxon": "^3.0.1",
+    "minimist": "^1.2.6"
+  },
+  "bin": {
+    "bizBrainzctl": "./bin/index.js"
+  }
+}

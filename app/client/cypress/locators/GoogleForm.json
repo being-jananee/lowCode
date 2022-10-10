@@ -1,0 +1,6 @@
+{
+  "googleClientId": "[name='BIZBRAINZ_OAUTH2_GOOGLE_CLIENT_ID']",
+  "googleClientSecret": "[name='BIZBRAINZ_OAUTH2_GOOGLE_CLIENT_SECRET']",
+  "googleAllowedDomains": "[name='BIZBRAINZ_SIGNUP_ALLOWED_DOMAINS']",
+  "saveBtn": ".t--admin-settings-save-button"
+}

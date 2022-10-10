@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  bizBrainz-internal-server:
+    image: bizBrainz/bizBrainz-server:release
+    env_file: envs/docker.env
+    environment:
+      BIZBRAINZ_REDIS_URL: "redis://redis:6379"
+      BIZBRAINZ_MONGODB_URI: "mongodb://mongo:27017/bizBrainz"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - bizBrainz
+    volumes:
+      - ./container-volumes/git-storage:/data/git-storage
+
+  mongo:
+    image: mongo:4.4.6
+    environment:
+      - MONGO_INITDB_DATABASE=bizBrainz
+    volumes:
+      - ./container-volumes/mongo:/data/db
+    networks:
+      - bizBrainz
+
+  redis:
+    image: redis
+    networks:
+      - bizBrainz
+
+networks:
+  bizBrainz:
+    driver: bridge

@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Configured as part of the DigitalOcean 1-Click Image build process
+
+cat <<EOF
+********************************************************************************
+Hello! Welcome to your Bizbrainz droplet!
+
+Your Bizbrainz is installed at ``/root/bizBrainz``.
+
+Find our documentation at https://docs.bizBrainz.com and join us on Discord at https://discord.gg/rBTTVJp.
+********************************************************************************
+EOF

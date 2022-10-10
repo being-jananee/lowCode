@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@bizBrainz/*": ["ee/*"],
+      "test/*": ["../test/*"]
+    }
+  }
+}

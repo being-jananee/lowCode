@@ -1,0 +1,16 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/:slug*",
+        "destination": "https://release.app.bizBrainz.com/api/:slug*"
+      },
+      {
+        "source": "/oauth2/:slug*",
+        "destination": "https://release.app.bizBrainz.com/oauth2/:slug*"
+      },
+      {
+        "source": "/login/:slug*",
+        "destination": "https://release.app.bizBrainz.com/login/:slug*"
+      }
+    ]
+  }

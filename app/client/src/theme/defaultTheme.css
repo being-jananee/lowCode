@@ -1,0 +1,13 @@
+.bizBrainz-light-theme {
+  /* Syntax of style naming */
+  /* --bizBrainz-<entity name>-<style-name> */
+  /* --------------------- */
+
+  /* input */
+  --bizBrainz-input-focus-border-color: var(--bizBrainz-color-black-900);
+
+  /* search input */
+  --bizBrainz-search-input-focus-mobile-border-color: var(--bizBrainz-color-black-900);
+  --bizBrainz-search-input-mobile-border-color: var(--bizBrainz-color-black-400);
+
+}

@@ -1,0 +1,15 @@
+annotations:
+  category: Application
+apiVersion: v2
+appVersion: "1.16.0"
+name: bizBrainz
+type: application
+description: Bizbrainz is an open source framework to build admin panels, CRUD apps and workflows. Build everything you need, 10x faster.
+maintainers:
+  - email: tech@bizBrainz.com
+    name: Bizbrainz
+sources:
+  - https://github.com/bizBrainzorg/bizBrainz
+home: https://www.bizBrainz.com/
+icon: https://assets.bizBrainz.com/bizBrainz-icon.png
+version: 1.5.3
